@@ -39,7 +39,7 @@
                         <div class="flex px-3">
                             <div class="flex flex-col w-1/3">
                                 <label class="ml-1 mb-1" for="email">Email address:</label>
-                                <input type="text"
+                                <input type="email"
                                        id="email"
                                        class="h-8 pl-1 rounded-lg"
                                        name="email"

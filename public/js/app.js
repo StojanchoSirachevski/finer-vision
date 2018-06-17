@@ -21097,7 +21097,7 @@ var render = function() {
                         ],
                         staticClass: "h-8 pl-1 rounded-lg",
                         attrs: {
-                          type: "text",
+                          type: "email",
                           id: "email",
                           name: "email",
                           "data-vv-as": "Email address",
