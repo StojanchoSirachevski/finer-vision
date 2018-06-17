@@ -13,7 +13,14 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+window.axios = require('axios');
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+import VeeValidate from 'vee-validate';
+
+Vue.component('accordion', require('./components/Accordion.vue'));
+
+Vue.use(VeeValidate);
 
 const app = new Vue({
     el: '#app'

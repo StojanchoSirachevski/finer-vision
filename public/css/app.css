@@ -1,2 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+#app {
+  background-color: black;
+  width: 40%;
+}
 

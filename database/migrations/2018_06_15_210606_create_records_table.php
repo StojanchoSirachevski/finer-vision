@@ -21,7 +21,7 @@ class CreateRecordsTable extends Migration
             $table->string('phone_number');
             $table->char('gender', 1);
             $table->date('dob');
-            $table->text('comments');
+            $table->text('comments')->nullable();
             $table->timestamps();
         });
     }

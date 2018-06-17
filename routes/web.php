@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', 'DashboardController@index');
+Route::post('/store', 'DashboardController@store');
