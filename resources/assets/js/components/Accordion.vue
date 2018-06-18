@@ -5,9 +5,11 @@
                     name="first"
                     :is-open="active === 'first'"
                     @toggle="setActive('first')">
+
                 <template slot="header">
                     <p>Step 1: Your details</p>
                 </template>
+
                 <template slot="body">
                     <div class="section--body rounded-lg h-auto" slot="body">
                         <div class="flex p-3">
@@ -56,14 +58,17 @@
                         </div>
                     </div>
                 </template>
+
             </accordion-item>
 
             <accordion-item name="second"
                             :is-open="active === 'second'"
                             @toggle="setActive('second')">
+
                 <template slot="header">
                     <p>Step 2: More comments</p>
                 </template>
+
                 <template slot="body">
                     <div class="section--body rounded-lg">
                         <div class="flex p-3">
@@ -130,14 +135,17 @@
                         </div>
                     </div>
                 </template>
+
             </accordion-item>
 
             <accordion-item name="third"
                             :is-open="active === 'third'"
                             @toggle="setActive('third')">
+
                 <template slot="header">
                     <p>Step 3: Final comments</p>
                 </template>
+
                 <template slot="body">
                     <div class="section--body rounded-lg">
                         <div class="flex p-3">
@@ -154,6 +162,7 @@
                         </div>
                     </div>
                 </template>
+
             </accordion-item>
         </form>
     </div>
