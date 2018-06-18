@@ -11,14 +11,12 @@ class DashboardController extends Controller
 {
     public function index()
     {
-//        return Record::all();
-
         return view('dashboard.index');
     }
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required|email|unique:records',
@@ -27,8 +25,6 @@ class DashboardController extends Controller
             'dob' => 'required|date_format:"d/m/Y"',
             'comments' => 'nullable'
         ]);
-
-//        dd(Carbon::parse($request->get('dob'))->format('d-m-Y'));
 
         $record = Record::create($request->all());
 

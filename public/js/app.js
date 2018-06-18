@@ -37109,6 +37109,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         setActive: function setActive(name) {
             var _this = this;
 
+            var activeIndex = this.sections.map(function (item) {
+                return item;
+            }).indexOf(this.active);
+            var nextItemIndex = this.sections.map(function (item) {
+                return item;
+            }).indexOf(name);
+
+            if (nextItemIndex <= activeIndex) {
+                this.active = name;
+                return;
+            }
+
             this.$validator.validateAll().then(function (result) {
 
                 if (!result) return;
@@ -37161,17 +37173,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(177)
+}
 var normalizeComponent = __webpack_require__(10)
 /* script */
 var __vue_script__ = __webpack_require__(162)
 /* template */
-var __vue_template__ = __webpack_require__(163)
+var __vue_template__ = __webpack_require__(179)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-69f65254"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -37249,55 +37265,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 163 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "section flex flex-col p-1" },
-    [
-      _c(
-        "div",
-        {
-          staticClass: "section--header p-3 rounded-lg",
-          on: { click: _vm.toggle }
-        },
-        [_vm._t("header")],
-        2
-      ),
-      _vm._v(" "),
-      _c(
-        "transition",
-        {
-          on: {
-            "before-enter": _vm.beforeEnter,
-            "before-leave": _vm.beforeLeave,
-            enter: _vm.enter,
-            leave: _vm.leave
-          }
-        },
-        [_vm.isOpen ? _vm._t("body") : _vm._e()],
-        2
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-69f65254", module.exports)
-  }
-}
-
-/***/ }),
+/* 163 */,
 /* 164 */
 /***/ (function(module, exports) {
 
@@ -37720,7 +37688,7 @@ exports = module.exports = __webpack_require__(169)(false);
 
 
 // module
-exports.push([module.i, "\n.section--header[data-v-3330a121] {\n  background-color: #ffcb2a;\n  color: white;\n  cursor: pointer;\n}\n.section--body[data-v-3330a121] {\n  height: auto;\n  background-color: #dddddd;\n  overflow: hidden;\n  -webkit-transition: 500ms ease-out;\n  transition: 500ms ease-out;\n}\n.button--next[data-v-3330a121] {\n  background-color: #5200b4;\n  padding: 3px 20px;\n  color: white;\n  font-size: 0.8em;\n}\n.error[data-v-3330a121] {\n  font-size: 0.8em;\n  margin-top: 5px;\n  color: red;\n}\n[type=\"date\"][data-v-3330a121] {\n  background: #fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50% no-repeat;\n}\n[type=\"date\"][data-v-3330a121]::-webkit-inner-spin-button {\n  display: none;\n}\n[type=\"date\"][data-v-3330a121]::-webkit-calendar-picker-indicator {\n  opacity: 0;\n}\n#comments[data-v-3330a121] {\n  height: 100px;\n}\n", ""]);
+exports.push([module.i, "\n.section--body[data-v-3330a121] {\n  height: auto;\n  background-color: #dddddd;\n  overflow: hidden;\n  -webkit-transition: 500ms ease-out;\n  transition: 500ms ease-out;\n}\n.button--next[data-v-3330a121] {\n  background-color: #5200b4;\n  padding: 3px 20px;\n  color: white;\n  font-size: 0.8em;\n}\n.error[data-v-3330a121] {\n  font-size: 0.8em;\n  margin-top: 5px;\n  color: red;\n}\n[type=\"date\"][data-v-3330a121] {\n  background: #fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50% no-repeat;\n}\n[type=\"date\"][data-v-3330a121]::-webkit-inner-spin-button {\n  display: none;\n}\n[type=\"date\"][data-v-3330a121]::-webkit-calendar-picker-indicator {\n  opacity: 0;\n}\n#comments[data-v-3330a121] {\n  height: 100px;\n}\n", ""]);
 
 // exports
 
@@ -38018,7 +37986,7 @@ var render = function() {
               _c(
                 "div",
                 {
-                  staticClass: "section--body h-auto",
+                  staticClass: "section--body rounded-lg h-auto",
                   attrs: { slot: "body" },
                   slot: "body"
                 },
@@ -38211,7 +38179,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("template", { slot: "body" }, [
-              _c("div", { staticClass: "section--body" }, [
+              _c("div", { staticClass: "section--body rounded-lg" }, [
                 _c("div", { staticClass: "flex p-3" }, [
                   _c("div", { staticClass: "flex flex-col mr-2" }, [
                     _c(
@@ -38448,7 +38416,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("template", { slot: "body" }, [
-              _c("div", { staticClass: "section--body" }, [
+              _c("div", { staticClass: "section--body rounded-lg" }, [
                 _c("div", { staticClass: "flex p-3" }, [
                   _c("div", { staticClass: "flex flex-col w-full" }, [
                     _c(
@@ -38513,6 +38481,95 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-3330a121", module.exports)
+  }
+}
+
+/***/ }),
+/* 177 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(178);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(174)("7b87359a", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-69f65254\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AccordionItem.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-69f65254\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AccordionItem.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 178 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(169)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.section--header[data-v-69f65254] {\n  background-color: #ffcb2a;\n  color: white;\n  cursor: pointer;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 179 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "section flex flex-col p-1" },
+    [
+      _c(
+        "div",
+        {
+          staticClass: "section--header p-3 rounded-lg",
+          on: { click: _vm.toggle }
+        },
+        [_vm._t("header")],
+        2
+      ),
+      _vm._v(" "),
+      _c(
+        "transition",
+        {
+          on: {
+            "before-enter": _vm.beforeEnter,
+            "before-leave": _vm.beforeLeave,
+            enter: _vm.enter,
+            leave: _vm.leave
+          }
+        },
+        [_vm.isOpen ? _vm._t("body") : _vm._e()],
+        2
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-69f65254", module.exports)
   }
 }
 

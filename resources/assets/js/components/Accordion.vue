@@ -9,7 +9,7 @@
                     <p>Step 1: Your details</p>
                 </template>
                 <template slot="body">
-                    <div class="section--body h-auto" slot="body">
+                    <div class="section--body rounded-lg h-auto" slot="body">
                         <div class="flex p-3">
                             <div class="flex flex-col mr-2 w-1/3">
                                 <label class="ml-1 mb-1" for="first_name">First Name:</label>
@@ -65,7 +65,7 @@
                     <p>Step 2: More comments</p>
                 </template>
                 <template slot="body">
-                    <div class="section--body">
+                    <div class="section--body rounded-lg">
                         <div class="flex p-3">
                             <div class="flex flex-col mr-2">
                                 <label class="ml-1 mb-1" for="phone_number">Phone Number:</label>
@@ -139,7 +139,7 @@
                     <p>Step 3: Final comments</p>
                 </template>
                 <template slot="body">
-                    <div class="section--body">
+                    <div class="section--body rounded-lg">
                         <div class="flex p-3">
                             <div class="flex flex-col w-full">
                                 <label class="ml-1 mb-1" for="comments">Comments:</label>
@@ -198,6 +198,14 @@
             },
             setActive(name) {
 
+                let activeIndex = this.sections.map(item => item).indexOf(this.active);
+                let nextItemIndex = this.sections.map(item => item).indexOf(name);
+
+                if(nextItemIndex <= activeIndex) {
+                    this.active = name;
+                    return;
+                }
+
                 this.$validator.validateAll()
                     .then(result => {
 
@@ -246,12 +254,6 @@
 </script>
 
 <style lang="scss" scoped>
-    .section--header {
-        background-color: #ffcb2a;
-        color: white;
-        cursor: pointer;
-    }
-
     .section--body {
         height: auto;
         background-color: #dddddd;

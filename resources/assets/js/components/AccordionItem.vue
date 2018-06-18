@@ -36,3 +36,11 @@
         }
     }
 </script>
+
+<style lang="scss" scoped>
+    .section--header {
+        background-color: #ffcb2a;
+        color: white;
+        cursor: pointer;
+    }
+</style>
