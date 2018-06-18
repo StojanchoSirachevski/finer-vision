@@ -106,8 +106,8 @@
                                                data-vv-validate-on="none" />
                                         <label for="gender-female">Female</label>
                                     </div>
-                                    <span class="error">{{ errors.first('gender') }}</span>
                                 </div>
+                                <span class="error">{{ errors.first('gender') }}</span>
                             </div>
                         </div>
                         <div class="flex">
@@ -244,3 +244,45 @@
         }
     }
 </script>
+
+<style lang="scss" scoped>
+    .section--header {
+        background-color: #ffcb2a;
+        color: white;
+        cursor: pointer;
+    }
+
+    .section--body {
+        height: auto;
+        background-color: #dddddd;
+        overflow: hidden;
+        transition: 500ms ease-out;
+    }
+
+    .button--next {
+        background-color: #5200b4;
+        padding: 3px 20px;
+        color: white;
+        font-size: 0.8em;
+    }
+
+    .error {
+        font-size: 0.8em;
+        margin-top: 5px;
+        color: red;
+    }
+
+    [type="date"] {
+        background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+    }
+    [type="date"]::-webkit-inner-spin-button {
+        display: none;
+    }
+    [type="date"]::-webkit-calendar-picker-indicator {
+        opacity: 0;
+    }
+
+    #comments {
+        height: 100px;
+    }
+</style>
