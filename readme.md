@@ -4,12 +4,13 @@ This is simple application for data-entry.
 
 It is consisted of 3 sections where you fill our user data, appropriate validation is performed and the data is saved in a MySql database.
 
-Please bear in mind that i didn't have any application installed on my pc to view the different layers in the .psd file (i assume there were) so i've only managed to have a look at the first section and proceeded with the rest following the example.
+Please bear in mind that i didn't have any application installed on my pc to view the different layers in the .psd file (i assume there were a few) so i've only managed to have a look at the first section and proceeded with the rest following the example.
 
 Tools used in this project:
 
 - [Laravel](https://laravel.com)
-- [Vue.js](https://vuejs.org/)
+- [Vue.js](https://vuejs.org/) and various plugins (validation)
+- [Axios](https://www.npmjs.com/package/axios)
 - [Tailwind](https://tailwindcss.com)
 
 ## Installation
